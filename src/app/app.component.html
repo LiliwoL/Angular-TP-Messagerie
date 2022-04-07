@@ -1,42 +1,49 @@
-<!-- Appel du composant en-tete -->
-<app-en-tete [title_fourni_au_composant_enfant]="title"></app-en-tete>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col">
+      <!-- Appel du composant en-tete -->
+      <app-en-tete [title_fourni_au_composant_enfant]="title"></app-en-tete>
+    </div>
+  </div>
 
-<hr>
+  <div class="row align-items-center">
+    <div class="col">
+      <app-gauche [listeMessages]="T_Messages"></app-gauche>
+    </div>
 
-<h2>Messagerie:</h2>
+    <div class="col">
+      <span>Nombre de messages envoyés: {{ T_Messages.length }}</span>
 
-<hr>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Auteur</th>
+              <th>Message</th>
+              <th>Date d'envoi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Directive ngFor sur un tableau -->
+            <tr *ngFor="let messageEnCours of T_Messages">
+              <td>
+                Auteur: {{ messageEnCours.auteur }}
+              </td>
+              <td>
+                Message: {{ messageEnCours.contenu }}
+              </td>
+              <td>
+                {{ messageEnCours.date | date: "dd/MM/YYY à HH:mm"}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-<app-gauche [listeMessages]="T_Messages"></app-gauche>
+    </div>
+  </div>
 
-<hr>
-
-<span>Nombre de messages envoyés: {{ T_Messages.length }}</span>
-
-<table>
-  <thead>
-    <tr>
-      <th>Auteur</th>
-      <th>Message</th>
-      <th>Date d'envoi</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Directive ngFor sur un tableau -->
-    <tr *ngFor="let messageEnCours of T_Messages">
-      <td>
-        Auteur: {{ messageEnCours.auteur }}
-      </td>
-      <td>
-        Message: {{ messageEnCours.contenu }}
-      </td>
-      <td>
-        {{ messageEnCours.date | date: "dd/MM/YYY à HH:mm"}}
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<hr>
-
-<app-pied-de-page [message]="message" (newMessageEvent)="envoiMessage()"></app-pied-de-page>
+  <div class="row align-items-center">
+    <div class="col">
+      <app-pied-de-page [message]="message" (newMessageEvent)="envoiMessage()"></app-pied-de-page>
+    </div>
+  </div>
+</div>

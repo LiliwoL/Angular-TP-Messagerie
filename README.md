@@ -22,6 +22,12 @@ Afin d'embellir l'app, on ajoute Bootstrap
 npm install bootstrap 4
 ```
 
+Il faudra ajouter dans *app.component.css*
+
+```css
+@import '~bootstrap/dist/css/bootstrap.min.css';
+```
+
 ## Création d'un formulaire dans le template principal
 
 ### Dépendances du module FormsModule

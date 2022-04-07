@@ -3,16 +3,16 @@
 <form (submit)="envoiMessageDepuisEnfant()">
 	<div>
 	  <label>Auteur:</label>
-	  <input type="text" name="message_auteur" placeholder="Nom de l'auteur..." [(ngModel)]="message.auteur" />
+	  <input type="text" name="message_auteur" placeholder="Nom de l'auteur..." [(ngModel)]="message.auteur" class="form-control"  />
 	</div>
 
 	<div>
 	  <label>Message:</label>
-	  <textarea name="message_contenu" [(ngModel)]="message.contenu">
+	  <textarea name="message_contenu" [(ngModel)]="message.contenu" class="form-control" >
 	  </textarea>
 	</div>
 
 	<div>
-	  <input type="submit" value="Envoyer" />
+	  <input type="submit" value="Envoyer" class="btn btn-primary" />
 	</div>
   </form>
