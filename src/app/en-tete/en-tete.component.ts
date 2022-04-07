@@ -7,8 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EnTeteComponent implements OnInit
 {
+  // Définition des données reçues depuius le composant PARENT
   @Input()
-    title: string = 'titre non défini';
+  title_fourni_au_composant_enfant: string = 'titre non défini';
 
   constructor() { }
 

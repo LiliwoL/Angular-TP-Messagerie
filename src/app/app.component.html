@@ -1,4 +1,5 @@
-<app-en-tete [title]="title"></app-en-tete>
+<!-- Appel du composant en-tete -->
+<app-en-tete [title_fourni_au_composant_enfant]="title"></app-en-tete>
 
 <hr>
 
@@ -14,25 +15,26 @@
 
 <table>
   <thead>
-  <tr>
-    <th>Auteur</th>
-    <th>Message</th>
-    <th>Date d'envoi</th>
-  </tr>
-</thead>
-<tbody>
-  <tr *ngFor="let messageEnCours of T_Messages">
-    <td>
-      Auteur: {{ messageEnCours.auteur }}
-    </td>
-    <td>
-      Message: {{ messageEnCours.contenu }}
-    </td>
-    <td>
-      {{ messageEnCours.date | date: "dd/MM/YYY HH:mm"}}
-    </td>
-  </tr>
-</tbody>
+    <tr>
+      <th>Auteur</th>
+      <th>Message</th>
+      <th>Date d'envoi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Directive ngFor sur un tableau -->
+    <tr *ngFor="let messageEnCours of T_Messages">
+      <td>
+        Auteur: {{ messageEnCours.auteur }}
+      </td>
+      <td>
+        Message: {{ messageEnCours.contenu }}
+      </td>
+      <td>
+        {{ messageEnCours.date | date: "dd/MM/YYY à HH:mm"}}
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <hr>

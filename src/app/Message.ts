@@ -5,5 +5,4 @@ export class Message
 		public contenu: string,
 		public date: Date
 	){}
-
 }
