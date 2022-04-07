@@ -1,0 +1,9 @@
+<h2>Composant gauche</h2>
+
+
+<span>Liste des auteurs</span>
+<ol>
+  <li *ngFor="let messageEnCours of listeMessages">
+    {{ messageEnCours.auteur }}
+  </li>
+</ol>

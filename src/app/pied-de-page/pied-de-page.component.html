@@ -1,0 +1,18 @@
+<hr>
+
+<form (submit)="envoiMessageDepuisEnfant()">
+	<div>
+	  <label>Auteur:</label>
+	  <input type="text" name="message_auteur" placeholder="Nom de l'auteur..." [(ngModel)]="message.auteur" />
+	</div>
+
+	<div>
+	  <label>Message:</label>
+	  <textarea name="message_contenu" [(ngModel)]="message.contenu">
+	  </textarea>
+	</div>
+
+	<div>
+	  <input type="submit" value="Envoyer" />
+	</div>
+  </form>
